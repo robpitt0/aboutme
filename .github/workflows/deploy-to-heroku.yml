@@ -3,7 +3,7 @@ name: Deploy to Heroku
 on:
   push:
     branches:
-      - main  # Triggers deployment on push to 'main'. Adjust if needed.
+      - main
 
 jobs:
   deploy:
@@ -11,25 +11,38 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout your code
+      # Checkout with full history
       - name: Checkout Code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-      # Step 2: Setup Node.js
+      # Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'  # Use a compatible Node.js version for your Next.js app
+          node-version: '18'
 
-      # Step 3: Install Dependencies
+      # Install Dependencies
       - name: Install Dependencies
         run: npm install
 
-      # Step 4: Build the Next.js Application
+      # Build the App
       - name: Build Next.js App
         run: npm run build
 
-      # Step 5: Deploy to Heroku
+      # Debug Heroku CLI
+      - name: Debug Heroku CLI
+        run: |
+          heroku --version
+          heroku auth:whoami
+
+      # Add Heroku Remote
+      - name: Add Heroku Remote
+        run: |
+          heroku git:remote --app ${{ secrets.HEROKU_APP_NAME }}
+
+      # Deploy to Heroku
       - name: Deploy to Heroku
         uses: akhileshns/heroku-deploy@v3.12.14
         with:
@@ -37,7 +50,7 @@ jobs:
           heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
           heroku_email: ${{ secrets.HEROKU_EMAIL }}
 
-      # Step 6: Check Deployment Status
+      # Check Deployment Status
       - name: Check Heroku Logs
         run: |
           echo "Deployment complete! Check your Heroku app at https://$HEROKU_APP_NAME.herokuapp.com"
