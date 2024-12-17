@@ -17,12 +17,12 @@ on:
     types:
       - completed
   status: {}
-jobs:
-  automerge:
-    runs-on: ubuntu-latest
-    steps:
-      - id: automerge
-        name: automerge
-        uses: "pascalgn/automerge-action@v0.16.3"
-        env:
-          GITHUB_TOKEN: "${{ secrets.WORKFLOW }}"
+# jobs:
+#   automerge:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - id: automerge
+#         name: automerge
+#         uses: "pascalgn/automerge-action@v0.16.3"
+#         env:
+#           GITHUB_TOKEN: "${{ secrets.WORKFLOW }}"

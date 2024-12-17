@@ -8,7 +8,7 @@ permissions:
   statuses: write # to generate status
   checks: write # to generate status
 
-jobs:
-  call-lint:
-    name: Call lint.yml
-    uses: mateusfg7/mateusf.com/.github/workflows/lint.yml@main
+# jobs:
+#   call-lint:
+#     name: Call lint.yml
+#     uses: mateusfg7/mateusf.com/.github/workflows/lint.yml@main
