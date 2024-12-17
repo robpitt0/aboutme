@@ -173,12 +173,13 @@ type Week = {
 }
 
 export async function getGithubContribution() {
-  const now = new Date()
-  const from = sub(now, { days: 30 })
-  // also include the next day in case our server is behind in time with respect to GitHub
-  const to = add(now, { days: 1 })
-  const query = {
-    query: `
+  try {
+    const now = new Date()
+    const from = sub(now, { days: 30 })
+    // also include the next day in case our server is behind in time with respect to GitHub
+    const to = add(now, { days: 1 })
+    const query = {
+      query: `
       query userInfo($LOGIN: String!, $FROM: DateTime!, $TO: DateTime!) {
         user(login: $LOGIN) {
           name
@@ -195,46 +196,50 @@ export async function getGithubContribution() {
         }
       }
     `,
-    variables: {
-      LOGIN: 'mateusfg7',
-      FROM: from.toISOString(),
-      TO: to.toISOString()
+      variables: {
+        LOGIN: 'mateusfg7',
+        FROM: from.toISOString(),
+        TO: to.toISOString()
+      }
     }
-  }
 
-  const headers = new Headers({
-    Authorization: `token ${process.env.GITHUB_TOKEN}`
-  })
-
-  const response = await fetch('https://api.github.com/graphql', {
-    method: 'POST',
-    body: JSON.stringify(query),
-    headers
-  })
-  const apiResponse = await response.json()
-
-  const userData: {
-    contributions: ContributionDay[]
-    name: string
-  } = {
-    contributions: [],
-    name: apiResponse.data.user.name
-  }
-
-  const weeks =
-    apiResponse.data.user.contributionsCollection.contributionCalendar.weeks
-  weeks.map((week: Week) =>
-    week.contributionDays.map((contributionDay: ContributionDay) => {
-      contributionDay.shortDate = new Date(contributionDay.date)
-        .getDate()
-        .toString()
-      userData.contributions.push(contributionDay)
+    const headers = new Headers({
+      Authorization: `token ${process.env.GITHUB_TOKEN}`
     })
-  )
 
-  const contributionCountByDayOfWeek = calculateMostProductiveDayOfWeek(
-    apiResponse.data.user.contributionsCollection.contributionCalendar
-  )
+    const response = await fetch('https://api.github.com/graphql', {
+      method: 'POST',
+      body: JSON.stringify(query),
+      headers
+    })
+    const apiResponse = await response.json()
 
-  return { ...userData, contributionCountByDayOfWeek }
+    const userData: {
+      contributions: ContributionDay[]
+      name: string
+    } = {
+      contributions: [],
+      name: apiResponse?.data?.user?.name
+    }
+
+    const weeks =
+      apiResponse?.data?.user?.contributionsCollection?.contributionCalendar
+        ?.weeks
+    weeks?.map((week: Week) =>
+      week?.contributionDays?.map((contributionDay: ContributionDay) => {
+        contributionDay.shortDate = new Date(contributionDay?.date)
+          ?.getDate()
+          ?.toString()
+        userData.contributions.push(contributionDay)
+      })
+    )
+
+    const contributionCountByDayOfWeek = calculateMostProductiveDayOfWeek(
+      apiResponse?.data?.user?.contributionsCollection?.contributionCalendar
+    )
+
+    return { ...userData, contributionCountByDayOfWeek }
+  } catch (error) {
+    console.log(error)
+  }
 }
