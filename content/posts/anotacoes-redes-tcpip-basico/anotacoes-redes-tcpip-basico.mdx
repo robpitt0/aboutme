@@ -1,0 +1,121 @@
+---
+title: 'Anotações: Redes TCP/IP Básico'
+date: '2024-07-29T23:31:24.020Z'
+description: 'Anotações do curso de Redes TCP/IP Básico da Fiberschool oferecido pela BrSuper Internet'
+category: 'Notes'
+tags: 'tcp/ip,brsuper,fiberschool,redes,internet,support'
+status: 'draft'
+---
+
+# Introdução ao TCP/IP
+## Tipos de Redes de Computadores
+
+Existem 4 níveis de redes de computadores: **PAN**, **LAN**, **MAN** e **WAN**. Eles diferem na distância de abrangência da rede.
+
+Rede | Exemplos | Abrangência
+--- | --- | ---
+**`PAN`** - **P**ersonal **A**rea **N**etwork (_Rede de área pessoal_) | Bluetooth, teclado sem fio | \<10m
+**`LAN`** - **L**ocal **A**rea **N**etwork (_Rede de área local_) | Rede doméstica, rede de uma empresa | 10m - 1Km
+**`MAN`** - **M**etropolitan **A**rea **N**etwork (_Rede de área metropolitana_) | Interligação de vários prédios em uma cidade, comunicação entre matriz e filial de uma empresa, redes de trânsporte público (coordenar e monitorar veículos em tempo real) | \<10Km
+**`WAN`** - **W**ide **A**rea **N**etwork (_Rede de área ampla_) | Internet, redes de telefonia, redes de televisão, comunicação entre matriz e filial de uma empresa que está espalhado em vários paises pelo mundo | \>10Km
+
+### TCP/IP
+
+A pilha TCP/IP é open-source, ou seja, sem um proprietário, permitindo assim uma grande adesão. "Pilha" porque é uma pilha de protocolos, onde cada protocolo é responsável por uma camada da pilha. Um conjunto de protocolos.
+
+## Modelo OSI
+
+OSI - **O**pen **S**ystems **I**nterconnection (_Interconexão de Sistemas Abertos_), criado pela ISO (_International Organization for Standardization_) em 1984 com o objetico de padronizar a comunicação entre sistemas de computadores.
+
+Antes de um modelo padrão para padronização, cada fabricante de equipamento de rede tinhas sua própria forma de comunicação, o que dificultava a comunicação entre equipamentos de fabricantes diferentes e causava problemas de interopelabilidade entre equipamentos.
+
+O modelo estabeleceu um arquitetura para que equipamentos de fabricantes distintos pudessem se comunicar de forma padronizada.
+
+OSI é um modelo de referência, não é um protocolo em sí. Ela é dividida em 7 camadas, cada uma com uma função específica.
+
+Camada | Nome | Função
+--- | --- | ---
+**7** | **`Aplicação`** | As apresentações de dados são entregues às aplicações de destino, que interpretam e processam os dados de acordo com as suas necessidades.
+**6** | **`Apresentação`** | As seções são encapsuladas em representações de dados, que podem ser formatados e transportados de acordo com as necessidades da aplicação.
+**5** | **`Sessão`** | Os segmentos são encapsuladas em sessões, que contêm informações sobre como estabelecer, manter e encerrar conexões entre aplicações.
+**4** | **`Transporte`** | Os pacotes são encapsulados em segmentos, contendo informações de portas de origem e destino, e outras informações necessárias para garantir que os dados sejam entregues corretamente.
+**3** | **`Rede`** | Os quadros são encapsulados em pacotes (datagramas) que contêm informações de endereçamento IP (IP de origem e destino) e outras informações necessárias para encaminhar os dados pela rede.
+**2** | **`Enlace`** | Os bits são agrupados em frames (quadros) que possuem um cabeçalho e um rodapé. O cabeçalho contém informações sobre o endereço MAC do remetente e do destinatário.
+**1** | **`Física`** | Os bits são transmitidos pela rede através de sinais elétricos, ópticos ou de rádio.
+
+# Enderençamento IPv4
+
+## Estrutura do Endereço IPv4
+
+- Comprimento fixo de 32 bits
+- Menor endereço: `0.0.0.0` | `0000.0000.0000.0000`
+- Maior endereço: `255.255.255.255` | `1111.1111.1111.1111`
+
+## Classes
+
+Classe | Início | Fim
+--- | --- | ---
+**`A`** | `0.0.0.0` | `127.255.255.255`
+**`B`** | `128.0.0.0` | `191.255.255.255`
+**`C`** | `192.0.0.0` | `223.255.255.255`
+**`D`** | `224.0.0.0` | `239.255.255.255`
+**`E`** | `240.0.0.0` | `247.255.255.255`
+
+## IP Privado/público
+
+### IP Privado
+
+IP Privado são aqueles IPs que são diretamente acessíveis dentro da própria rede. Eles não estão diretamente conectados à internet (ficam protegidos abaixo de roteadores e firewalls).
+
+<Tip>
+**Exemplo**: `192.168.0.1`
+</Tip>
+
+**Faixas de IP Privado:**
+- `10.0.0.0` até `10.255.255.255`
+- `172.16.0.0` até `172.31.255.255`
+- `192.168.0.0` até `192.168.255.255`
+
+### IP Público
+
+Os endereços de IP público são aqueles que podem ser acessados pela internet pública e são exclusivos para cada dispositivo conectado à internet. Esses endereços são fornecidos pelos provedores de serviços de internet (ISPs) e estão disponíveis em quantidades limitadas.
+
+<Tip>
+**Exemplo**: `157.240.222.35` (_facebook.com_)
+</Tip>
+
+# IPv4 to IPv6
+
+O IPv4 suporte cerca de **4,3 bilhões** de endereços únicos. Quantidade que é considerada baixa devido ao grande aumento de dispositivos conectados globalmente.
+
+Em 2011 a IANA comunicou que haviam alocado o último bloco de endereços IPv4.
+
+<Tip>
+A **IANA** (**I**nternet **A**ssigned **N**umbers **A**uthority) é a organização responsável pela atribuição global de endereços IP, indentificadores de protocolos, números de portas e outros parâmetros relacionados ao funcionamento da internet. A IANA é uma função desempenhada pela **I**nternet **C**orporation for **A**ssigned **N**ames and **N**umbers (**ICANN**).
+</Tip>
+
+### Entenda os números...
+
+Referêncoa | Quantidade | Número
+--- | --- | ---
+Pessoas (_08/2024_) | 7.9 bilhões | 007.900.000.000
+Endereços IPv4 | 4.3 bilhões | 004.300.000.000
+Endereços IPv6 | 340 undecilhões | 340.000.000.000.000.000.000.000.000.000.000.000
+
+O IPv6 é como a quantidade de estrelas da nossa galáxia, a Via Láctea, que tem cerca de 400 bilhões de estrelas. Agora imagine 850 vezes mais estrelas do que isso - ess é o tamanho do IPv6.
+
+O IPv6 é como a quantidade de grãos de areia em 36 praias, cada uma com 10 km de extensão. É difícil de imaginar, mas é uma quantidade incrivelmente grande.
+
+# Enderençamento IPv6
+
+## Estrutura do Endereço IPv6
+
+- Comprimento fixo de 128 bits
+- Menor endereço: `0000:0000:0000:0000:0000:0000:0000:0000`
+- Maior endereço: `FFFF:FFFF:FFFF:FFFF:FFFF:FFFF:FFFF:FFFF`
+
+Ele é dividido em 8 blocos de 16 bits, separados por `:`, com o endereço de rede (prefixo) e o endereço de host.
+
+Exemplo de endereço IPv6: `2a03:2880:f048:0011:face:b00c:0000:0002`
+
+O endereço IPv6 é feito usando o sistema hexadecimal, que é uma forma de representar números em base 16. O sistema hexadecimal usa os números de 0 a 9 e as letras de A a F para representar os números de 0 a 15.
