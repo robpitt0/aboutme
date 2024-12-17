@@ -90,7 +90,10 @@ export function Introduction() {
 
       <p>
         Developer with over 7 years of experience, specializing in
-        <strong>clean</strong>, <strong>maintainable</strong>, and <strong>scalable code</strong>. I enjoy crafting solutions using modern technologies, particularly in the <Javascript />, <Typescript />, and Next.js ecosystems.
+        <strong>clean</strong>, <strong>maintainable</strong>, and{' '}
+        <strong>scalable code</strong>. I enjoy crafting solutions using modern
+        technologies, particularly in the <Javascript />, <Typescript />, and
+        Next.js ecosystems.
       </p>
 
       {/* <p>
@@ -110,7 +113,7 @@ export function Introduction() {
         <Link label="blog posts" href="/blog" /> or with my{' '}
         <Link label='"Today I Learn"' href="/blog/til" /> notes!
       </p> */}
-{/* 
+      {/* 
       <p>
         I&apos;d love to hear your ideas!.
       </p> */}

@@ -9,9 +9,7 @@ export async function MostListenedMusic() {
   //   artist,
   //   url
   // } = await getLastFmTopTracks('1month').then((tracks:any) => tracks[0])
-
   // const cover = await getAlbumCover(`${title} - ${artist.name}`)
-
   // return (
   //   <a
   //     target="_blank"

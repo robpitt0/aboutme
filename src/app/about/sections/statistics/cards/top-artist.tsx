@@ -6,7 +6,6 @@ import { Card } from '../card'
 export async function TopArtist() {
   // const topArtists = await getLastFmTopArtists()
   // const mostListened = topArtists[0]
-
   // return (
   //   <Card
   //     title="Top Artist"

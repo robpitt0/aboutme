@@ -5,7 +5,6 @@ import { getLastFmUserInfo } from '~/lib/lastFm'
 
 export async function SpotifyPlays() {
   // const { playcount } = await getLastFmUserInfo()
-
   // return (
   //   <Card
   //     title="Spotify Plays"

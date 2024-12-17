@@ -18,12 +18,12 @@ export function StatisticsGrid() {
       <Suspense fallback={<GridSkeleton />}>
         <div className="space-y-4">
           <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
-            <AgeCard />
+            {/* <AgeCard /> */}
             <GithubStars />
             <GithubFollowers />
             <BlogPosts />
             {/* <SpotifyPlays /> */}
-            <TopArtist />
+            {/* <TopArtist /> */}
           </div>
           <div className="flex justify-center md:justify-end">
             <Link

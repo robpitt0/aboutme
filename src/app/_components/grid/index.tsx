@@ -23,7 +23,7 @@ const BooksCard = () => (
 export function Grid() {
   return (
     <div>
-      <div className="mt-8 mb-8 grid grid-cols-3 gap-3 md:grid-cols-6">
+      <div className="mb-8 mt-8 grid grid-cols-3 gap-3 md:grid-cols-6">
         <div className="col-span-3">
           <GithubLink />
         </div>
