@@ -17,9 +17,9 @@ export function GithubDashboard() {
     <ErrorBoundary fallback={<FallbackError />}>
       <Suspense fallback={<GithubStatsSkeleton />}>
         <div className="grid grid-cols-1 gap-3 md:grid-cols-4">
-          <div className="col-span-2 row-span-2">
+          {/* <div className="col-span-2 row-span-2">
             <Followers />
-          </div>
+          </div> */}
 
           <Stars />
           <Languages />
