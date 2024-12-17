@@ -56,7 +56,7 @@ export async function getLastFmRecentTracks() {
     const lastFmApiRequest = await fetch(
       `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=mateusfg7&api_key=${process.env.LASTFM_API_KEY}&format=json`
     )
-  
+
     if (!lastFmApiRequest.ok) {
       console.log(lastFmApiRequest)
       throw new ApiError({
@@ -65,16 +65,13 @@ export async function getLastFmRecentTracks() {
         url: lastFmApiRequest.url
       })
     }
-  
+
     const {
       recenttracks: { track }
     }: RecentTracksBody = await lastFmApiRequest.json()
-  
+
     return track
-    
-  } catch (error) {
-    
-  }
+  } catch (error) {}
 }
 
 export type Artist = {
@@ -98,7 +95,7 @@ export async function getLastFmTopArtists() {
     const lastFmApiRequest = await fetch(
       `http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=mateusfg7&api_key=${process.env.LASTFM_API_KEY}&format=json&period=6month`
     )
-  
+
     if (!lastFmApiRequest.ok) {
       console.log(lastFmApiRequest)
       throw new ApiError({
@@ -107,16 +104,13 @@ export async function getLastFmTopArtists() {
         url: lastFmApiRequest.url
       })
     }
-  
+
     const {
       topartists: { artist }
     }: TopArtistsBody = await lastFmApiRequest.json()
-  
+
     return artist
-    
-  } catch (error) {
-    
-  }
+  } catch (error) {}
 }
 
 export type TopTrack = {
@@ -145,13 +139,11 @@ type TopTracksBody = {
 }
 
 export async function getLastFmTopTracks(period: Period = '6month') {
-
-try {
-  
+  try {
     const lastFmApiRequest = await fetch(
       `http://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=mateusfg7&api_key=${process.env.LASTFM_API_KEY}&format=json&period=${period}`
     )
-  
+
     if (!lastFmApiRequest.ok) {
       console.log(lastFmApiRequest)
       throw new ApiError({
@@ -160,16 +152,13 @@ try {
         url: lastFmApiRequest.url
       })
     }
-  
+
     const {
       toptracks: { track: tracks }
     }: TopTracksBody = await lastFmApiRequest.json()
-  
+
     return tracks
-  
-} catch (error) {
-  
-}
+  } catch (error) {}
 }
 
 type User = {
@@ -183,7 +172,7 @@ export async function getLastFmUserInfo() {
     const lastFmApiRequest = await fetch(
       `http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=mateusfg7&api_key=${process.env.LASTFM_API_KEY}&format=json`
     )
-  
+
     if (!lastFmApiRequest.ok) {
       console.log(lastFmApiRequest)
       throw new ApiError({
@@ -192,12 +181,9 @@ export async function getLastFmUserInfo() {
         url: lastFmApiRequest.url
       })
     }
-  
+
     const { user }: { user: User } = await lastFmApiRequest.json()
-  
+
     return user
-    
-  } catch (error) {
-    
-  }
+  } catch (error) {}
 }

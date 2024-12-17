@@ -17,9 +17,7 @@ export const metadata: Metadata = {
     template: `%s • ${config.metadata.title}`
   },
   applicationName: config.metadata.title,
-  authors: [
-    { name: 'Robert Pittman', url: 'https://github.com/robpitt0' }
-  ],
+  authors: [{ name: 'Robert Pittman', url: 'https://github.com/robpitt0' }],
   category: 'Personal Website',
   keywords: [
     'personal',
@@ -41,9 +39,7 @@ export const metadata: Metadata = {
     siteName: config.metadata.title,
     type: 'website',
     url: '/',
-    emails: [
-      'robpitt271@gmail.com'
-    ]
+    emails: ['robpitt271@gmail.com']
   },
   twitter: {
     ...config.metadata,
@@ -104,4 +100,3 @@ export default function RootLayout({
     </html>
   )
 }
-
