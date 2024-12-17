@@ -31,6 +31,11 @@ jobs:
       - name: Build Next.js App
         run: npm run build
 
+      # Authenticate with Heroku
+      - name: Authenticate with Heroku
+        run: |
+          echo ${{ secrets.HEROKU_API_KEY }} | heroku auth:token
+
       # Debug Heroku CLI
       - name: Debug Heroku CLI
         run: |
