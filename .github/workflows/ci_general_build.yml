@@ -1,0 +1,37 @@
+name: Lint and Build Next.js App
+
+on:
+  push:
+    branches:
+      - main # Trigger on pushes to the main branch
+  pull_request:
+    branches:
+      - main # Trigger on pull requests targeting the main branch
+
+jobs:
+  lint-and-build:
+    name: Lint and Build Next.js Application
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout Code
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # Use the appropriate Node.js version for your Next.js app
+
+      # Step 3: Install Dependencies
+      - name: Install Dependencies
+        run: npm install
+
+      # Step 4: Run ESLint
+      - name: Run Lint
+        run: npm run lint
+
+      # Step 5: Build Next.js Application
+      - name: Build Application
+        run: npm run build
