@@ -29,8 +29,8 @@ export function generateFeed() {
     generator: 'Feed for Node.js',
     author: {
       name: 'Robert Pittman',
-      email: 'contact@mateusf.com',
-      link: 'https://mateusf.com'
+      email: '', // contact@robert-pittman.com
+      link: '' // https://mateusf.com
     }
   })
 
@@ -46,8 +46,8 @@ export function generateFeed() {
       author: [
         {
           name: 'Robert Pittman',
-          email: 'contact@mateusf.com',
-          link: 'https://mateusf.com'
+          email: '', // contact@mateusf.com
+          link: '' // https://mateusf.com
         }
       ],
       date: new Date(post.date),

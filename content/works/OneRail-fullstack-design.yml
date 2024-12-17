@@ -1,0 +1,18 @@
+position: "Full Stack Web Developer"
+description: "OneRail is a company specialized in last-mile delivery solutions, offering delivery order automation including multimodal optimization and automated rate shopping, catering to industries such as retail, food and grocery, manufacturing, wholesale, distribution, and healthcare. My role included: - Built Node.js microservice applications to manage FSTP file systems, consuming EDI file parsers for 204, 214, and 209 formats, enabling seamless integration of delivery dispatches into the core application. - Increased team efficiency by 20% through training backend developers on core dispatching systems and best practices. - Implemented New Relic.js for advanced Application Performance Monitoring (APM), enhancing application performance visibility and debugging capabilities."
+in: "03-11-2021"
+out: "09-01-2021"
+company:
+  name: "OneRail"
+  # website: "https://cdn.prod.website-files.com"
+  # logo: "63e3dbac60ea4b9e0c47c078/6418abaa8af84b5a0043bbd5_logo_49_one_rail.png"
+tags:
+  - 'instagram'
+  - 'image'
+  - 'edition'
+  - 'design'
+  - 'graphic'
+  - 'video'
+  - 'photoshop'
+  - 'figma'
+  - 'canvas'

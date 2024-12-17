@@ -47,9 +47,9 @@ export async function MakingCard() {
           <Coffee />
           <span>Currently making...</span>
         </div>
-        <Link href="/projects" className="opacity-80 hover:opacity-100">
+        {/* <Link href="/projects" className="opacity-80 hover:opacity-100">
           see projects
-        </Link>
+        </Link> */}
       </header>
       <div className="space-y-3 rounded-xl border border-neutral-200 p-2 dark:border-neutral-800">
         <div>
@@ -105,7 +105,7 @@ export async function MakingCard() {
         <a
           className="flex items-end justify-center rounded-xl p-3 leading-none underline opacity-70 hover:opacity-100"
           target="_blank"
-          href="https://read.cv/mateusfelipe/?ref=https://mateusf.com"
+          // href="https://read.cv/mateusfelipe/?ref=https://mateusf.com"
         >
           {/* <span>read.cv</span> */}
           {/* <ArrowUpRight className="text-xs" size="1em" /> */}

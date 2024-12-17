@@ -21,14 +21,14 @@ export const metadata: Metadata = {
   category: 'Personal Website',
   keywords: [
     'personal',
-    'blog',
+    // 'blog',
     'homepage',
-    'portfolio',
-    'about',
-    'me',
-    'tech',
-    'programming',
-    'knowledge'
+    // 'portfolio',
+    'about'
+    // 'me',
+    // 'tech',
+    // 'programming',
+    // 'knowledge'
   ],
   robots: {
     follow: true,

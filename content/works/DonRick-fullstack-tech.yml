@@ -1,0 +1,17 @@
+position: "Full Stack Web Developer"
+description: "Don Rick simplifies event planning by offering premium venues for occasions like conferences, weddings, and private gatherings. Through its innovative software, clients can effectively browse, book, and manage events with ease. My role included: - Developed a Node.js/React.js application for inventory and client management, serving both client-facing and internal admin needs. - Designed and maintained RESTful APIs using Node.js, Express.js, and TypeScript. - Deployed responsive frontend applications with React.js and TypeScript, enhancing user experience and reducing load time. - Automated CI/CD workflows using GitHub Actions, cutting deployment times by 50% for manual deployments. - Increased e-commerce platform's transaction volume by 25%, resulting in an additional $2 million in annual revenue. - Enabled a 30% rise in customer retention by implementing a customer feedback feature using Next.js and Redux. - Improved website load times by 40%, enhancing user experience and reducing bounce rates by 15%."
+in: "01-06-2017"
+out: "01-03-2021"
+company:
+  name: "Don-Rick LLC"
+  # website: "https://mateusf.com/about"
+  # logo: "assets/mateusfelipe.png"
+tags:
+  - 'freelance'
+  - 'self-employ'
+  - 'technician'
+  - 'hardware'
+  - 'software'
+  - 'maintenance'
+  - 'windows'
+  - 'linux'

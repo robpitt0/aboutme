@@ -23,10 +23,10 @@ export default function Page() {
     <div className="content-container m-auto space-y-32">
       <AboutMe />
       <StatisticsGrid />
-      <Knowledge />
+      {/* <Knowledge /> */}
       <Experience />
-      <Educational />
-      <Contact />
+      {/* <Educational /> */}
+      {/* <Contact /> */}
     </div>
   )
 }
