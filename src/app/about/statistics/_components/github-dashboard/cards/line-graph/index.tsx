@@ -3,7 +3,7 @@ import { getGithubContribution } from '~/lib/github'
 import { Chart } from './chart'
 
 export async function LineGraph() {
-  const githubActivity = await getGithubContribution()
+  // const githubActivity = await getGithubContribution()
 
   return (
     <div className="flex h-full w-full flex-col justify-center gap-3 rounded-3xl bg-neutral-200 p-4 leading-none dark:bg-neutral-950 md:p-7">
@@ -15,7 +15,7 @@ export async function LineGraph() {
         <span className="text-xs text-neutral-600/50">from last 31 days</span>
       </div>
       <div className="flex h-full items-center">
-        <Chart data={githubActivity.contributions} />
+        {/* <Chart data={githubActivity.contributions} /> */}
       </div>
     </div>
   )
