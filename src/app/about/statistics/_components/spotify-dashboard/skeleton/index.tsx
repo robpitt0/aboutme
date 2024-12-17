@@ -9,12 +9,12 @@ export function SpotifyStatsSkeleton() {
       {/* <div className="md:col-span-2">
         <LastTrackSkeleton />
       </div> */}
-      <div className="md:col-span-2">
+      {/* <div className="md:col-span-2">
         <TopTrackSkeleton />
       </div>
 
       <TopTracksSkeleton />
-      <TopArtistsSkeleton />
+      <TopArtistsSkeleton /> */}
     </div>
   )
 }
