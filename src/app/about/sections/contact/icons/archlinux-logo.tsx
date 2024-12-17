@@ -16,8 +16,8 @@ export const ArchLinuxLogo = ({
       fill={color}
       fillOpacity={0.2}
       stroke={color}
-      stroke-width={1.5}
-      stroke-linejoin="round"
+      strokeWidth={1.5}
+      strokeLinejoin="round"
     />
   </svg>
 )

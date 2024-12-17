@@ -21,5 +21,5 @@ export function AgeCard() {
     setAge(diffCalc())
   }, 100)
 
-  return <Card title="My Age" content={age} />
+  // return <Card title="My Age" content={age} />
 }
