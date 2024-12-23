@@ -54,17 +54,11 @@ export function Footer() {
             MDX
           </Link>
           ,{' '}
-          <Link
-            href="https://tailwindcss.com/?ref=mateusf.com"
-            rel="external"
-          >
+          <Link href="https://tailwindcss.com/?ref=mateusf.com" rel="external">
             Tailwindcss
           </Link>{' '}
           and{' '}
-          <Link
-            href="https://velite.js.org/?ref=mateusf.com"
-            rel="external"
-          >
+          <Link href="https://velite.js.org/?ref=mateusf.com" rel="external">
             Velite
           </Link>{' '}
           by{' '}
