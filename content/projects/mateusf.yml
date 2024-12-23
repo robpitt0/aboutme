@@ -1,7 +1,7 @@
-title: 'MateusF.com'
+title: 'mateusf.com'
 description: 'My personal homepage & portfolio... This website!'
 image: 'https://mateusf.com/preview.png'
 core_techs: ['typescript', 'reactjs', 'nextjs', 'tailwindcss', 'mdx']
 tags: ['typescript', 'reactjs', 'nextjs', 'tailwindcss', 'radix-ui', 'velite', 'kbar', 'phosphor-icons', 'mdx']
-repository: 'https://github.com/mateusfg7/mateusf.com'
+repository: 'https://github.com/robpitt0'
 website: 'https://mateusf.com/'

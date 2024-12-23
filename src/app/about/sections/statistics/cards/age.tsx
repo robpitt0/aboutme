@@ -6,7 +6,7 @@ import { Card } from '../card'
 export function AgeCard() {
   const diffCalc = () => {
     const diff =
-      (new Date().getTime() - new Date('August 22, 2002').getTime()) /
+      (new Date().getTime() - new Date('April 11, 1990').getTime()) /
       1000 /
       60 /
       60 /
@@ -21,5 +21,5 @@ export function AgeCard() {
     setAge(diffCalc())
   }, 100)
 
-  // return <Card title="My Age" content={age} />
+  return <Card title="My Age" content={age} />
 }

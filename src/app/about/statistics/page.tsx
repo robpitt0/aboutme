@@ -45,7 +45,7 @@ export default function Page() {
           <h2>Spotify</h2>
           <SpotifyLogo size="1em" weight="duotone" />
         </div>
-        {/* <SpotifyDashboard /> */}
+        <SpotifyDashboard />
       </div>
     </div>
   )

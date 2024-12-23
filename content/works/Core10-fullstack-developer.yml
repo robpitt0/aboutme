@@ -1,9 +1,9 @@
-position: "Senior Node.js Full Stack Web Developer"
+position: "Sr. Full Stack Web Developer"
 description: "Core10 is a North American provider of banking, lending products, and financial technology services, specializing in delivering cost-effective development solutions designed for the fintech industry. My role includes: - Hiring/interviewing, leading an agile team of 5 full stack developers. - Designed and deployed Node.js/Feathers.js microservices, managing the entire lifecycle from development to production. - Implemented and optimized payment scalability by implementing Kafka, enabling seamless processing during high call volumes. - Refactored AWS DynamoDB architecture, improving data storage and retrieval efficiency by 35%."
 in: "09-27-2021"
 company:
   name: "Senior Web Engineer"
-  # website: "https://robert-pittman.com/about"
+  # website: "https://mateusf.com/about"
   # logo: "assets/mateusfelipe.png"
 tags:
   - 'typescript'

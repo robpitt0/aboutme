@@ -10,6 +10,8 @@ const BASIC = Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString('base64')
 
 const TOKEN_ENDPOINT = 'https://accounts.spotify.com/api/token'
 
+// Refactor this to use refresh token 😅
+
 const getAccessToken = async () => {
   const response = await fetch(TOKEN_ENDPOINT, {
     method: 'POST',
@@ -18,8 +20,8 @@ const getAccessToken = async () => {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
     body: new URLSearchParams({
-      grant_type: 'refresh_token',
-      refresh_token: REFRESH_TOKEN
+      grant_type: 'client_credentials'
+      // refresh_token: REFRESH_TOKEN
     })
   })
   return await response.json()

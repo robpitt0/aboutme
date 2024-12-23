@@ -30,17 +30,17 @@ export function Grid() {
         <div className="col-span-2 gap-3 md:grid-cols-6">
           <GithubStats />
         </div>
-        {/* <MostListenedMusic /> */}
+        <MostListenedMusic />
       </div>
 
       <div className="mt-3 grid grid-cols-3 md:grid-cols-6">
         <div className="col-span-3 flex flex-col gap-3">
           <div className="flex gap-3">
-            {/* <div className="w-24">
+            <div className="w-24">
               <LetterboxedLink />
-            </div> */}
+            </div>
             <div className="flex w-full flex-col gap-3">
-              {/* <LinksCard /> */}
+              <LinksCard />
             </div>
           </div>
 

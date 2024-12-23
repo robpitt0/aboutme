@@ -29,7 +29,7 @@ export function generateFeed() {
     generator: 'Feed for Node.js',
     author: {
       name: 'Robert Pittman',
-      email: '', // contact@robert-pittman.com
+      email: '', // contact@mateusf.com
       link: '' // https://mateusf.com
     }
   })

@@ -13,7 +13,7 @@ export function GlpiIcon(props: SVGProps<SVGSVGElement>) {
       xmlSpace="preserve"
       {...props}
     >
-      {/* <path
+      <path
         fill="#000000"
         opacity="1.000000"
         stroke="none"
@@ -39,7 +39,7 @@ M262.895355,265.015564
 	C248.668457,282.915436 254.682587,281.075348 258.110779,275.245209
 	C259.922546,272.164032 260.761719,268.510956 262.895355,265.015564
 z"
-      /> */}
+      />
       <path
         fill="#01A4F7"
         opacity="1.000000"

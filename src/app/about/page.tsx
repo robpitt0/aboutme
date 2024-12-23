@@ -24,9 +24,9 @@ export default function Page() {
       <AboutMe />
       <StatisticsGrid />
       {/* <Knowledge /> */}
+      <Contact />
       <Experience />
       {/* <Educational /> */}
-      {/* <Contact /> */}
     </div>
   )
 }

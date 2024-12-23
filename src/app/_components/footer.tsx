@@ -19,7 +19,7 @@ export function Footer() {
       <div className="content-container m-auto flex items-center leading-none md:justify-between">
         <div className="hidden gap-4 text-neutral-500 dark:text-neutral-400 md:flex">
           <Link
-            href="#" // https://github.com/robpitt0/mateusf.com/blob/main/LICENSE/?ref=robert-pittman.com
+            href="#" // https://github.com/robpitt0/mateusf.com/blob/main/LICENSE/?ref=mateusf.com
             rel="license"
           >
             <span>License</span>
@@ -34,7 +34,7 @@ export function Footer() {
             <ArrowIcon />
           </Link>
           <Link
-            href="#" // https://github.com/robpitt0/mateusf.com/?ref=robert-pittman.com
+            href="#" // https://github.com/robpitt0/mateusf.com/?ref=mateusf.com
             rel="external"
           >
             <span>Github</span>
@@ -44,25 +44,25 @@ export function Footer() {
         <div className="text-center text-sm text-neutral-400 dark:text-neutral-500 md:text-right">
           Built with{' '}
           <Link
-            href="https://nextjs.org/?ref=https://robert-pittman.com"
+            href="https://nextjs.org/?ref=https://mateusf.com"
             rel="external"
           >
             Next.js
           </Link>
           ,{' '}
-          <Link href="https://mdxjs.com/?ref=robert-pittman.com" rel="external">
+          <Link href="https://mdxjs.com/?ref=mateusf.com" rel="external">
             MDX
           </Link>
           ,{' '}
           <Link
-            href="https://tailwindcss.com/?ref=robert-pittman.com"
+            href="https://tailwindcss.com/?ref=mateusf.com"
             rel="external"
           >
             Tailwindcss
           </Link>{' '}
           and{' '}
           <Link
-            href="https://velite.js.org/?ref=robert-pittman.com"
+            href="https://velite.js.org/?ref=mateusf.com"
             rel="external"
           >
             Velite
