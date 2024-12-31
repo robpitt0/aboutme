@@ -51,25 +51,27 @@ type RecentTracksBody = {
   }
 }
 
-export async function getLastFmRecentTracks() {
-  const lastFmApiRequest = await fetch(
-    `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=robpitt271&api_key=${process.env.LASTFM_API_KEY}&format=json`
-  )
+export async function getLastFmRecentTracks(): Promise<any> {
+  try {
+    const lastFmApiRequest = await fetch(
+      `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=robpitt271&api_key=${process.env.LASTFM_API_KEY}&format=json`
+    )
 
-  if (!lastFmApiRequest.ok) {
-    console.log(lastFmApiRequest)
-    throw new ApiError({
-      message: lastFmApiRequest.statusText,
-      status: lastFmApiRequest.status,
-      url: lastFmApiRequest.url
-    })
-  }
+    if (!lastFmApiRequest.ok) {
+      console.log(lastFmApiRequest)
+      throw new ApiError({
+        message: lastFmApiRequest.statusText,
+        status: lastFmApiRequest.status,
+        url: lastFmApiRequest.url
+      })
+    }
 
-  const {
-    recenttracks: { track }
-  }: RecentTracksBody = await lastFmApiRequest.json()
+    const {
+      recenttracks: { track }
+    }: RecentTracksBody = await lastFmApiRequest.json()
 
-  return track
+    return track
+  } catch (error) {}
 }
 
 export type Artist = {
@@ -88,7 +90,7 @@ type TopArtistsBody = {
   }
 }
 
-export async function getLastFmTopArtists() {
+export async function getLastFmTopArtists(): Promise<any> {
   const lastFmApiRequest = await fetch(
     `http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=mateusfg7&api_key=${process.env.LASTFM_API_KEY}&format=json&period=6month`
   )
@@ -134,25 +136,29 @@ type TopTracksBody = {
   }
 }
 
-export async function getLastFmTopTracks(period: Period = '6month') {
-  const lastFmApiRequest = await fetch(
-    `http://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=mateusfg7&api_key=${process.env.LASTFM_API_KEY}&format=json&period=${period}`
-  )
+export async function getLastFmTopTracks(
+  period: Period = '6month'
+): Promise<any> {
+  try {
+    const lastFmApiRequest = await fetch(
+      `http://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=mateusfg7&api_key=${process.env.LASTFM_API_KEY}&format=json&period=${period}`
+    )
 
-  if (!lastFmApiRequest.ok) {
-    console.log(lastFmApiRequest)
-    throw new ApiError({
-      message: lastFmApiRequest.statusText,
-      status: lastFmApiRequest.status,
-      url: lastFmApiRequest.url
-    })
-  }
+    if (!lastFmApiRequest.ok) {
+      console.log(lastFmApiRequest)
+      throw new ApiError({
+        message: lastFmApiRequest.statusText,
+        status: lastFmApiRequest.status,
+        url: lastFmApiRequest.url
+      })
+    }
 
-  const {
-    toptracks: { track: tracks }
-  }: TopTracksBody = await lastFmApiRequest.json()
+    const {
+      toptracks: { track: tracks }
+    }: TopTracksBody = await lastFmApiRequest.json()
 
-  return tracks
+    return tracks
+  } catch (error) {}
 }
 
 type User = {
@@ -161,21 +167,23 @@ type User = {
   url: string
 }
 
-export async function getLastFmUserInfo() {
-  const lastFmApiRequest = await fetch(
-    `http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=mateusfg7&api_key=${process.env.LASTFM_API_KEY}&format=json`
-  )
+export async function getLastFmUserInfo(): Promise<any> {
+  try {
+    const lastFmApiRequest = await fetch(
+      `http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=mateusfg7&api_key=${process.env.LASTFM_API_KEY}&format=json`
+    )
 
-  if (!lastFmApiRequest.ok) {
-    console.log(lastFmApiRequest)
-    throw new ApiError({
-      message: lastFmApiRequest.statusText,
-      status: lastFmApiRequest.status,
-      url: lastFmApiRequest.url
-    })
-  }
+    if (!lastFmApiRequest.ok) {
+      console.log(lastFmApiRequest)
+      throw new ApiError({
+        message: lastFmApiRequest.statusText,
+        status: lastFmApiRequest.status,
+        url: lastFmApiRequest.url
+      })
+    }
 
-  const { user }: { user: User } = await lastFmApiRequest.json()
+    const { user }: { user: User } = await lastFmApiRequest.json()
 
-  return user
+    return user
+  } catch (error) {}
 }
