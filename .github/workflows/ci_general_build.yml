@@ -12,6 +12,11 @@ jobs:
   lint-and-build:
     name: Lint and Build Next.js Application
     runs-on: ubuntu-latest
+    env:
+      HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
+      HEROKU_EMAIL: ${{secrets.HEROKU_EMAIL}}
+      HEROKU_APP_NAME: ${{secrets.HEROKU_APP_NAME}}
+      LASTFM_API_KEY: ${{secrets.LASTFM_API_KEY}}åå
 
     steps:
       # Step 1: Checkout Code
