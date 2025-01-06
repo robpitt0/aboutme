@@ -25,7 +25,7 @@ export async function getGithubUserData() {
 
 export async function getGithubCommits() {
   const githubApiRequest = await fetch(
-    'https://api.github.com/search/commits?q=author:mateusfg7'
+    'https://api.github.com/search/commits?q=author:robpitt0'
   )
 
   if (!githubApiRequest.ok) {
@@ -59,7 +59,7 @@ export async function getGithubFollowers() {
 
   for (let index = 1; index <= numberOfPages; index++) {
     const githubFollowersRequest = await fetch(
-      `https://api.github.com/users/mateusfg7/followers?per_page=100&page=${index}`
+      `https://api.github.com/users/robpitt0/followers?per_page=100&page=${index}`
     )
 
     if (!githubFollowersRequest.ok) {
@@ -194,7 +194,7 @@ export async function getGithubContribution() {
       }
     `,
     variables: {
-      LOGIN: 'mateusfg7',
+      LOGIN: 'robpitt0',
       FROM: from.toISOString(),
       TO: to.toISOString()
     }

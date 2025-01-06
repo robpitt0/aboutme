@@ -158,9 +158,9 @@ const TocItem = ({
 }: { toc: TocEntry } & ComponentProps<'li'>) => (
   <li {...rest}>
     <a href={toc.url}>{toc.title}</a>
-    {toc.items.length > 0 && (
+    {toc?.items?.length > 0 && (
       <ol className="space-y-2">
-        {toc.items.map(childToc => (
+        {toc?.items?.map(childToc => (
           <TocItem
             toc={childToc}
             key={childToc.url}

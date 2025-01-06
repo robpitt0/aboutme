@@ -42,15 +42,21 @@ type Response = {
 }
 
 export async function getAlbumCover(track: string) {
-  const { access_token } = await getAccessToken()
-  const URL = ENDPOINT + encodeURI(track) + '&type=track&market=IN&limit=1'
-  const res: Response = await fetch(URL, {
-    headers: {
-      Authorization: `Bearer ${access_token}`
-    }
-  }).then(async res => {
-    return res.json()
-  })
+  try {
+    const { access_token } = await getAccessToken()
+    const URL = ENDPOINT + encodeURI(track) + '&type=track&market=IN&limit=1'
+    const res: Response = await fetch(URL, {
+      headers: {
+        Authorization: `Bearer ${access_token}`
+      }
+    }).then(async res => {
+      return res.json()
+    })
 
-  return res.tracks.items[0].album.images.filter(img => img.height === 640)[0]
+    return res?.tracks?.items[0]?.album?.images?.filter(
+      img => img.height === 640
+    )[0]
+  } catch {
+    return []
+  }
 }
