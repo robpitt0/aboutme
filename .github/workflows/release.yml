@@ -31,7 +31,7 @@ jobs:
       - name: Bump Tag
         id: bump_tag
         env:
-          GITHUB_TOKEN: ${{ secrets.WORKFLOWS_TOKEN }}
+          G_TOKEN: ${{ secrets.WORKFLOWS_TOKEN }}
         run: |
           pnpm bump-tag &&\
             echo "isNew=true" >> "$GITHUB_OUTPUT" ||\

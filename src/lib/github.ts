@@ -201,7 +201,7 @@ export async function getGithubContribution() {
   }
 
   const headers = new Headers({
-    Authorization: `token ${process.env.GITHUB_TOKEN}`
+    Authorization: `token ${process.env.G_TOKEN}`
   })
 
   const response = await fetch('https://api.github.com/graphql', {
