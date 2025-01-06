@@ -139,11 +139,13 @@ function calculateMostProductiveDayOfWeek(contributionCalendar: {
     Saturday: 0
   }
 
-  for (const week of contributionCalendar.weeks) {
-    for (const day of week.contributionDays) {
-      const date = new Date(day.date)
-      const dayOfWeek = daysOfWeek[date.getUTCDay()]
-      contributionCountByDayOfWeek[dayOfWeek] += day.contributionCount
+  if (contributionCalendar?.weeks) {
+    for (const week of contributionCalendar.weeks) {
+      for (const day of week.contributionDays) {
+        const date = new Date(day.date)
+        const dayOfWeek = daysOfWeek[date.getUTCDay()]
+        contributionCountByDayOfWeek[dayOfWeek] += day.contributionCount
+      }
     }
   }
 
