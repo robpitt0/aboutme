@@ -9,7 +9,7 @@ export async function TopTrack() {
   const track = await getLastFmTopTracks('1month').then(tracks => tracks[0])
   const imageUrl = await getAlbumCover(
     `${track.name} - ${track.artist.name}`
-  ).then(data => data.url)
+  ).then((data: any) => data?.url)
   return (
     <div className="flex h-full w-full items-center justify-between gap-2 rounded-3xl bg-neutral-200 p-4 leading-none dark:bg-neutral-950 md:p-7">
       <div className="flex h-full flex-1 flex-col overflow-hidden">

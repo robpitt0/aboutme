@@ -9,7 +9,7 @@ export async function MostListenedMusic() {
     artist,
     url
   } = await getLastFmTopTracks('1month').then((tracks: any) => tracks[0])
-  const cover = await getAlbumCover(`${title} - ${artist.name}`)
+  const cover: any = await getAlbumCover(`${title} - ${artist.name}`)
   return (
     <a
       target="_blank"
@@ -32,14 +32,14 @@ export async function MostListenedMusic() {
         </div>
       </div>
       <Image
-        src={cover.url}
+        src={cover?.url || ''}
         alt={title!}
         className="absolute -bottom-10 -left-14 -z-10 rounded-full blur-2xl"
         width={200}
         height={200}
       />
       <Image
-        src={cover.url}
+        src={cover?.url || ''}
         alt={title!}
         className="absolute -bottom-12 -left-16 animate-spin overflow-hidden rounded-full animate-duration-[120s]"
         placeholder="empty"
